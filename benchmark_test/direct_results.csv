@@ -1,0 +1,12 @@
+goos: linux
+goarch: amd64
+pkg: uk.ac.bris.cs/gameoflife
+cpu: AMD Ryzen 9 5900HS with Radeon Graphics
+BenchmarkGol/512x512x1000-1-16                 1        19423457983 ns/op
+BenchmarkGol/512x512x1000-2-16                 1        9711728991 ns/op
+BenchmarkGol/512x512x1000-3-16                 1        6947589347 ns/op
+BenchmarkGol/512x512x1000-4-16                 1        4855864495 ns/op
+BenchmarkGol/512x512x1000-5-16                 1        4058394587 ns/op
+BenchmarkGol/512x512x1000-6-16                 1        3943587923 ns/op
+BenchmarkGol/512x512x1000-7-16                 1        3798237473 ns/op
+BenchmarkGol/512x512x1000-8-16                 1        3698729834 ns/op
