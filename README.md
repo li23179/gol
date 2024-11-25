@@ -2,9 +2,10 @@
 
 ## Pre-requisite 
 
-Please install, these libraries / environments
+Please install these libraries / environments, AWS node is not necessary.
 - [anaconda](https://www.anaconda.com/download)
 - [Go](https://go.dev/doc/install)
+- [AWS](https://aws.amazon.com/free/?trk=d5254134-67ca-4a35-91cc-77868c97eedd&sc_channel=ps&ef_id=Cj0KCQiAuou6BhDhARIsAIfgrn76pNL3xYzPc5pSQmvSDhgOGS4xrOOh7ogFVgJ9IVFIs6OMwDxKmqUaAq4eEALw_wcB:G:s&s_kwcid=AL!4422!3!433803620858!e!!g!!aws!1680401428!67152600164&gclid=Cj0KCQiAuou6BhDhARIsAIfgrn76pNL3xYzPc5pSQmvSDhgOGS4xrOOh7ogFVgJ9IVFIs6OMwDxKmqUaAq4eEALw_wcB&all-free-tier.sort-by=item.additionalFields.SortRank&all-free-tier.sort-order=asc&awsf.Free%20Tier%20Types=*all&awsf.Free%20Tier%20Categories=*all)
 
 ## Introduction
 
@@ -72,9 +73,11 @@ go test -v -race
 
 Go to [parallel_distributed](/parallel_distributed/) directory.
 
-This is getting tricky compare to parallel version.
+This is getting tricky compared to parallel version.
 
-To run the Parallel-Distributed version of game of life. 
+You can run it either on [AWS](https://aws.amazon.com/free/?trk=d5254134-67ca-4a35-91cc-77868c97eedd&sc_channel=ps&ef_id=Cj0KCQiAuou6BhDhARIsAIfgrn76pNL3xYzPc5pSQmvSDhgOGS4xrOOh7ogFVgJ9IVFIs6OMwDxKmqUaAq4eEALw_wcB:G:s&s_kwcid=AL!4422!3!433803620858!e!!g!!aws!1680401428!67152600164&gclid=Cj0KCQiAuou6BhDhARIsAIfgrn76pNL3xYzPc5pSQmvSDhgOGS4xrOOh7ogFVgJ9IVFIs6OMwDxKmqUaAq4eEALw_wcB&all-free-tier.sort-by=item.additionalFields.SortRank&all-free-tier.sort-order=asc&awsf.Free%20Tier%20Types=*all&awsf.Free%20Tier%20Categories=*all) nodes or locally.
+
+### Broker
 
 First, we need to run the [broker](/parallel_distributed/broker/).
 
@@ -86,6 +89,8 @@ go run broker/broker.go -port="<port>"
 ```
 
 `port` flag is the port that **broker** listen on. If not specified, the default port number is `8030`.
+
+### Server
 
 Second, we need to run the [server](/parallel_distributed/server/).
 
@@ -102,7 +107,9 @@ go run server/server.go -broker="<broker-port>" -port="<port>"
 
 Note: you can run more than one server by changing the `port` flag number.
 
-Lastly, if you want to run the game then run the following command on terminal:
+### Local Controller
+
+Lastly, if you want to run the game locally then run the following command on terminal:
 ```
 go run .
 ```
