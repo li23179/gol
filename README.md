@@ -171,3 +171,5 @@ python <Benchmark.py>
 ### Report
 
 We have written a report to analyse the performance in each component and also the functionality of Game of Life we have implemented in [**Report**](/report.pdf).
+___
+&copy; 2024 Gordon Wai Hin Kam &amp; Ivan Leung Ka Ho. All rights reserved. 
