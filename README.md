@@ -167,6 +167,19 @@ Run the following command:
 ```
 python <Benchmark.py>
 ```
+### Using shell script
+We can test the program easily by running the following command:
+```
+./benchmark.sh <no_of_servers> <no_of_threads>
+```
+(the broker need to be started before running benchmark.sh)
+
+<no_of_servers> refers to the number of workers that will work in the whole distributed system and
+<no_of_threads> refers to the number of threads that will be used to process the game in each individual worker in parallel.
+
+With this shell script, we can easily customize the number of servers/threads and the port of the first server that we want to test.
+After triggering the shell script, it will automatically start all the workers with some timeout, and finally starting the client to call the broker to start the whole process.
+After everything finished processing, the shell script will cleanup all running process (workers and client) that isn't quit properly.
 
 ### Report
 
